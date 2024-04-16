@@ -1,0 +1,184 @@
+:root {
+  --linear-gradien: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --red: hsl(0, 100%, 66%);
+
+  --white: hsl(0, 0%, 100%);
+  --light-grayish: hsl(270, 3%, 87%);
+  --dark-grayish: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+}
+
+#container {
+  /* max-width: 1440px; */
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  gap: 0 25rem;
+}
+
+#bg-left-desktop {
+  background: url("./images/bg-main-desktop.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  flex: 1;
+  position: relative;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 4px;
+}
+
+main {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+
+form {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 300px;
+  width: 100%;
+}
+
+.box-input {
+  display: flex;
+  flex-direction: column;
+  input {
+    width: 100%;
+  }
+}
+
+label {
+  font-size: 0.7rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 1px;
+  display: block;
+}
+#card-exp-date-cvc {
+  display: flex;
+  gap: 0 1rem;
+}
+#card-exp-date-cvc > div:nth-child(1) {
+  display: block;
+}
+
+#exp-year {
+  align-self: flex-end;
+}
+
+.btn {
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+#bg-left-desktop {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+#card-front {
+  background: url("./images/bg-card-front.png") no-repeat;
+  width: 430px;
+  height: 240px;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--light-grayish);
+  position: absolute;
+  right: -169px;
+  top: 250px;
+}
+
+#icons {
+  display: flex;
+  gap: 0 0.7rem;
+  align-items: center;
+}
+
+#white-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: var(--white);
+}
+
+#second-icon {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--light-grayish);
+}
+
+#output-card-number {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 2.5px;
+}
+
+#personal-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  p {
+    letter-spacing: 2px;
+  }
+}
+
+#card-back {
+  background: url("./images/bg-card-back.png") no-repeat;
+  width: 430px;
+  height: 240px;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--light-grayish);
+  position: absolute;
+  right: -269px;
+  top: 520px;
+}
+
+#cvc-output {
+  /* text-align: center; */
+  padding-right: 1rem;
+}
+
+.error-message {
+  color: #f00;
+  font-size: 0.8rem;
+}
+
+#complete-card {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  display: none;
+
+  button {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+}
