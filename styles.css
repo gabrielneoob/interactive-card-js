@@ -147,7 +147,7 @@ label {
 }
 
 #card-back {
-  background: url("./images/bg-card-back.png") no-repeat;
+  background: url("./images/bg-card-back.png") no-repeat center;
   width: 430px;
   height: 240px;
   border-radius: 0.5rem;
@@ -180,5 +180,53 @@ label {
   button {
     width: 100%;
     margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  #container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    align-items: flex-start;
+    margin-top: 7rem;
+  }
+
+  #card-front {
+    position: unset;
+    width: 330px;
+    height: 210px;
+    transform: translate(-1.5rem, 5rem);
+    /* top: 0;
+    left: 0; */
+  }
+
+  #output-card-number {
+    font-size: 1.2rem;
+  }
+
+  #card-back {
+    transform: translate(2.1rem, 10rem);
+    /* transform: translateX(0); */
+    position: unset;
+    width: 330px;
+    height: 210px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* top: 0;
+    left: 0; */
+  }
+
+  #cvc-output {
+    padding-top: 0;
+  }
+
+  #bg-left-desktop {
+    width: 100%;
+    align-items: center;
   }
 }
