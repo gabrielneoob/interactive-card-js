@@ -72,33 +72,48 @@ const currentUser = {};
 
 formInputs.cvc.addEventListener("keyup", (e) => {
   const { value } = e.target;
+  formInputs.cvc.value = value.replace(/[a-zA-Z\s]/g, "");
   outputCvcCard.textContent = value ? value : "000";
   inputValues.cvc = value ? value : "";
 });
 formInputs.name.addEventListener("keyup", (e) => {
   const { value } = e.target;
+
   frontCardOutputs.name.textContent = value
-    ? value.toUpperCase()
-    : "FELICIA LEIRE";
+    ? value.toUpperCase().trim()
+    : "JANE APPLESEED";
   inputValues.name = value ? value : "";
 });
 
-formInputs.number.addEventListener("keyup", (e) => {
-  const { value } = e.target;
+formInputs.number.addEventListener("input", (e) => {
+  let { value } = e.target;
+  // value = value.replace(/\s/g, "");
+  formInputs.number.value = value.replace(/[a-zA-Z\s]/g, "");
+  // if (value.length === 4) {
+  //   formInputs.number.value += " ";
+  // }
+  // formInputs.number.value = value.replace(/[a-z]/g, "");
+  // if (value[value.length - 1] === " ") {
+  //   formInputs.number.value = " ";
+  // }
   frontCardOutputs.number.textContent = value
-    ? value.toUpperCase()
-    : "9591 6489 6389 101E";
+    ? formatCardNumber(value)
+    : "0000 0000 0000 0000";
   inputValues.number = value ? formatCardNumber(value) : "";
 });
 
 formInputs.month.addEventListener("keyup", (e) => {
   const { value } = e.target;
+  formInputs.month.value = value.replace(/[a-zA-Z\s]/g, "");
+
   frontCardOutputs.month.textContent = value ? value : "00";
   inputValues.month = value ? value : "";
 });
 
 formInputs.year.addEventListener("keyup", (e) => {
   const { value } = e.target;
+  formInputs.year.value = value.replace(/[a-zA-Z\s]/g, "");
+
   frontCardOutputs.year.textContent = value ? value : "00";
   inputValues.year = value ? value : "";
 });
@@ -233,8 +248,8 @@ continueBtn.addEventListener("click", () => {
   inputValues.number = "";
   inputValues.year = "";
 
-  frontCardOutputs.name.textContent = "FELICIA LEIRE";
-  frontCardOutputs.number.textContent = "9591 6489 6389 1019";
+  frontCardOutputs.name.textContent = "JANE APPLESEED";
+  frontCardOutputs.number.textContent = "0000 0000 0000 0000";
   frontCardOutputs.month.textContent = "00";
   frontCardOutputs.year.textContent = "00";
 });
