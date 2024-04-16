@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Interactvie Card</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="bg-left-desktop">
+        <div id="card-front">
+          <div id="icons">
+            <div id="white-icon"></div>
+            <div id="second-icon"></div>
+          </div>
+          <div id="bottom-container-front-card">
+            <div id="output-card-number">9591 6489 6389 1019</div>
+            <div id="personal-details">
+              <p id="output-name">FELICIA LEIRE</p>
+              <p id="output-exp-date">
+                <span id="month">00</span>/<span id="year">00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="card-back">
+          <p id="cvc-output">000</p>
+        </div>
+      </div>
+
+      <main>
+        <form>
+          <div class="box-input">
+            <label for="name">CARDHOLDER NAME</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              minlength="1"
+              maxlength="20"
+            />
+            <span class="error-message" id="name-error"></span>
+          </div>
+
+          <div class="box-input">
+            <label for="card-number">CARDHOLDER NUMBER</label>
+            <input
+              type="text"
+              name="card-number"
+              id="card-number"
+              required
+              minlength="19"
+              maxlength="19"
+              placeholder="0000 0000 0000 0000"
+            />
+            <span class="error-message" id="number-error"></span>
+          </div>
+
+          <div id="card-exp-date-cvc">
+            <div>
+              <label for="month-exp">EXP. DATE (MM/YY)</label>
+              <div id="exp-date" style="display: flex; gap: 0 10px">
+                <input
+                  type="text"
+                  name="month-exp"
+                  id="month-exp"
+                  minlength="2"
+                  maxlength="2"
+                  placeholder="MM"
+                  style="width: 60px"
+                  required
+                />
+                <input
+                  type="text"
+                  name="year-exp"
+                  id="year-exp"
+                  minlength="2"
+                  maxlength="2"
+                  placeholder="YY"
+                  style="width: 60px"
+                  required
+                />
+              </div>
+              <span class="error-message" id="month-error"></span>
+            </div>
+            <div id="cvc-number">
+              <label for="cvc">CVC</label>
+              <input type="text" placeholder="e.g. 123" maxlength="3"
+              minlength="3 name="cvc" id="cvc" required style="width: 152px" />
+              <span class="error-message" id="cvc-error"></span>
+            </div>
+          </div>
+          <button type="submit" id="submit-btn" class="btn">Confirm</button>
+        </form>
+
+        <div id="complete-card">
+          <img src="./images/icon-complete.svg" alt="" />
+          <h2>THANK YOU!</h2>
+          <p>We've added your card details</p>
+          <button class="btn" id="continue-btn">Continue</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
