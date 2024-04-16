@@ -31,7 +31,7 @@ const errorsElements = {
 };
 
 const inputsRegex = {
-  name: /^[a-zA-Z]+$/,
+  name: /^[a-zA-Z\s]+$/,
   number: {
     allNumbers: /^[\d\s]+$/,
   },
@@ -212,6 +212,7 @@ formInputs.btn.addEventListener("click", (e) => {
 
   if (
     inputValues.name &&
+    inputsRegex.name.test(inputValues.name) &&
     inputValues.number &&
     inputValues.month &&
     inputsRegex.month.test(inputValues.month) &&
